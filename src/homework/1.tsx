@@ -3,9 +3,7 @@ interface IProps {
   children: React.ReactNode;
   onContentEndVisible: () => void;
 }
-class Options {
-constructor (public rootMargin: string, public threshold: number, public root: null ) {}
-}
+
 // Опишіть Props
 export const Observer: FC<IProps> = ({ children, onContentEndVisible }) => {
   // Вкажіть правильний тип для useRef зверніть увагу, в який DOM елемент ми його передаємо
@@ -13,7 +11,7 @@ export const Observer: FC<IProps> = ({ children, onContentEndVisible }) => {
 
   useEffect(() => {
     // Вкажіть правильний тип для options, підказка, клас також можна вказувати як тип
-    const options: Options = {
+    const options: IntersectionObserverInit = {
       rootMargin: '0px',
       threshold: 1.0,
       root: null,
